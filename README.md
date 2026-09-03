@@ -47,6 +47,14 @@ endmodule
 
 ## Verilog Code for 4-Bit Ripple carry Adder
 ```verilog
+module full_adder (A, B, Cin,Sum, Cout);
+    input A, B, Cin;
+    output Sum, Cout;
+
+    assign Sum = A ^ B ^ Cin;
+    assign Cout = (A & B) | (B & Cin) | (A & Cin);
+endmodule
+
 module adder_4bit (A,B,Cin,Sum,Cout);
     input [3:0] A, B;
     input Cin;
@@ -100,7 +108,7 @@ endmodule
 ![Screenshot 2025-05-21 155538](https://github.com/user-attachments/assets/187ebe28-40e2-44b2-9b78-d08bdc67d62c)
 
 ### Simulation Waveforms
-![Screenshot 2025-05-21 155512](https://github.com/user-attachments/assets/4d1457be-ef30-4b8b-a58d-aa8ac39c078c)
+<img width="1600" height="900" alt="Image 2026-09-03 at 3 21 00 PM" src="https://github.com/user-attachments/assets/31eb95e5-68f9-4159-921c-df7d51678c24" />
 
 
 
